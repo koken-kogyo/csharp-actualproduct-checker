@@ -46,6 +46,9 @@ y.watanabae
 ｜├ConfigSMTP - gmail.xml　　　# データベース設定ファイル (テスト用)  
 ｜└ConfigSMTP - Koken.xml　　　# データベース設定ファイル  
 ｜
+├specification/  
+｜└[KMC006SC] 製造実績ファイル照合 機能仕様書_Ver.1.0.0.0.xlsx  
+｜
 ├ActualProductChecker.sln　　　# プロジェクトファイル  
 └README.md　　　# このファイル  
 
