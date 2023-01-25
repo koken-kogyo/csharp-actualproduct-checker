@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SMTPConfigData>
+  <Server>smtp.gmail.com</Server>
+  <Port>587</Port>
+  <LoginUser>watuwa3@gmail.com</LoginUser>
+  <LoginPass>T`Y\`_`\khqarmem</LoginPass>
+  <From>コーケン工業　システム管理者 &lt;watuwa3@gmail.com&gt;</From>
+</SMTPConfigData>

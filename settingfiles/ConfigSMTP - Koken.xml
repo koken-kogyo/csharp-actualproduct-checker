@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SMTPConfigData>
+  <Server>140.227.104.69</Server>
+  <Port>587</Port>
+  <LoginUser>yoshiyuki-watanabe</LoginUser>
+  <LoginPass>eIM;[@dr\cG02:vb</LoginPass>
+  <From>コーケン工業　システム管理者 &lt;yoshiyuki-watanabe@koken-kogyo.co.jp&gt;</From>
+</SMTPConfigData>

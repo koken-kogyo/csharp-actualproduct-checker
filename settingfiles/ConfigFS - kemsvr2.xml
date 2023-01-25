@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfFSConfigData>
+  <FSConfigData>
+    <!-- コピー元: i-Reporter サーバー接続設定 -->
+    <HostName>ireposv</HostName>
+    <IpAddr>192.168.96.204</IpAddr>
+    <UserId>ireposv\Administrator</UserId>
+    <Passwd>i&lt;k4m[mB</Passwd>
+    <ShareName>\\ireposv\output</ShareName>
+    <RootPath>\\ireposv\output</RootPath>
+    <FileFilter>*_dataoutput.csv</FileFilter>
+    <CreateSubDir></CreateSubDir>
+  </FSConfigData>
+  <FSConfigData>
+    <!-- コピー先: EM サーバー接続設定 -->
+    <HostName>kemsvr2</HostName>
+    <IpAddr>192.168.96.213</IpAddr>
+    <UserId>kemsvr2\Administrator</UserId>
+    <Passwd>QU_\b</Passwd>
+    <ShareName>\\kemsvr2\ireportdata$</ShareName>
+    <RootPath>\\kemsvr2\ireportdata$\bkup</RootPath>
+    <FileFilter></FileFilter>
+    <CreateSubDir>no</CreateSubDir>
+  </FSConfigData>
+</ArrayOfFSConfigData>

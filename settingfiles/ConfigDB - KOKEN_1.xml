@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DBConfigData>
+  <User>KOKEN_1</User>
+  <Passwd>;@=8BT'</Passwd>
+  <Protocol>tcp</Protocol>
+  <Host>192.168.96.213</Host>
+  <Port>1521</Port>
+  <ServiceName>KTEST</ServiceName>
+  <Schema>KOKEN_1</Schema>
+</DBConfigData>

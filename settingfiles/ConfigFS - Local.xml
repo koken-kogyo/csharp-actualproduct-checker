@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfFSConfigData>
+  <FSConfigData>
+    <!-- コピー元: i-Reporter サーバー接続設定 -->
+    <HostName>nabe01</HostName>
+    <IpAddr>192.168.3.4</IpAddr>
+    <UserId>nabe</UserId>
+    <Passwd>Q</Passwd>
+    <ShareName>\\nabe01\output</ShareName>
+    <RootPath>\\nabe01\output</RootPath>
+    <FileFilter>*_dataoutput*.csv</FileFilter>
+    <CreateSubDir></CreateSubDir>
+  </FSConfigData>
+  <FSConfigData>
+    <!-- コピー先: テスト用 サーバー接続設定 -->
+    <HostName>nabe01</HostName>
+    <IpAddr>192.168.3.4</IpAddr>
+    <UserId>nabe</UserId>
+    <Passwd>Q</Passwd>
+    <ShareName>\\nabe01\ireportdata</ShareName>
+    <RootPath>\\nabe01\ireportdata\data</RootPath>
+    <FileFilter></FileFilter>
+    <CreateSubDir>no</CreateSubDir>
+  </FSConfigData>
+</ArrayOfFSConfigData>
