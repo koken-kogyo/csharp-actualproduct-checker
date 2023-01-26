@@ -13,18 +13,17 @@ namespace ActualProductChecker
 {
     internal class Program
     {
-        private static bool fales;
-
+        // 処理対象格納クラス
         class Target
         {
             public Target(string folder) {
-                Folder = folder;
-                CntIn = 0;
-                CntTg = 0;
-                CntOk = 0;
-                CntNg = 0;
-                CntNothing = 0;
-                AttachFiles = new List<string>();
+                Folder = folder;                    // 処理対象となるフォルダ名称
+                CntIn = 0;                          // i-Reporter 完了処理件数
+                CntTg = 0;                          // i-Reporter 対象工程の完了処理件数
+                CntOk = 0;                          // 自動受入完了件数
+                CntNg = 0;                          // 自動受入失敗件数
+                CntNothing = 0;                     // i-Reporter 対象工程だが、完了フォルダにも失敗フォルダにも見当たらない件数
+                AttachFiles = new List<string>();   // 失敗または不明となったファイルパスのリスト
             }
 
             public bool IsActivate() {
@@ -82,8 +81,8 @@ namespace ActualProductChecker
                 if (!cmn.Dba.GetEmailAddress(cmn, Common.EMAIL_ADRTYPE_TO, ref myDs)) return;
                 if (!cmn.Dba.GetEmailAddress(cmn, Common.EMAIL_ADRTYPE_CC, ref myDs)) return;
                 // データベースから有効かつ運用中の工程名称を取得
-                if (!cmn.Dba.GetIRepoKt(cmn, Common.A70_ACTIVE_ACTIVE, Common.A70_OPESTAT_OPARATED, ref myDs)) return;
-                myIRepoList = myDs.Tables[Common.TABLE_NAME_A70].AsEnumerable()
+                if (!cmn.Dba.GetIRepoKt(cmn, Common.KM1060_ACTIVE_ACTIVE, Common.KM1060_OPESTAT_OPARATED, ref myDs)) return;
+                myIRepoList = myDs.Tables[Common.TABLE_NAME_KM1060].AsEnumerable()
                     .Select(row => row.Field<string>("IREPOKTNM")).ToList();
             }
 
@@ -184,11 +183,13 @@ namespace ActualProductChecker
                             "　行方不明となったファイル：" + cNothing + "件\n" +
                             Common.MAIL_BODY_FOOTER;
                         // 自動受入ログの添付（実行中はファイルにアクセス出来ない為複写して添付）
-                        if (File.Exists(Common.JIDOU_LOG_PATH + "\\" + Common.JIDOU_LOG_FILE))
+                        // \\kemsvr2\d$\IREPOEXE\exe\batch.log
+                        var jidoulog_source = @cmn.FsCd[Common.CONNECT_DEST].ShareName + Common.JIDOU_LOG_PATH + "\\" + Common.JIDOU_LOG_FILE;
+                        if (File.Exists(jidoulog_source))
                         {
-                            var jidoulog = @cmn.BaseDir + "\\" + Common.JIDOU_LOG_FILE;
-                            File.Copy(@Common.JIDOU_LOG_PATH + "\\" + Common.JIDOU_LOG_FILE, jidoulog, true);
-                            Attachment attachjidou = new Attachment(jidoulog);
+                            var jidoulog_dest = @cmn.BaseDir + "\\" + Common.JIDOU_LOG_FILE;
+                            File.Copy(jidoulog_source, jidoulog_dest, true);
+                            Attachment attachjidou = new Attachment(jidoulog_dest);
                             msg.Attachments.Add(attachjidou);
                         }
 

@@ -17,7 +17,7 @@
     <IpAddr>192.168.96.213</IpAddr>
     <UserId>kemsvr2\Administrator</UserId>
     <Passwd>QU_\b</Passwd>
-    <ShareName>\\kemsvr2\ireportdata$</ShareName>
+    <ShareName>\\kemsvr2\d$</ShareName>
     <RootPath>\\kemsvr2\ireportdata$\bkup</RootPath>
     <FileFilter></FileFilter>
     <CreateSubDir>no</CreateSubDir>

@@ -69,7 +69,7 @@ namespace ActualProductChecker
         }
 
         /// <summary>
-        /// i-Reporter 対象工程取得 (A70 i-Reporter 対象工程マスタ)
+        /// i-Reporter 対象工程取得 (KM1060 i-Reporter 対象工程マスタ)
         /// </summary>
         /// <param name="_cmn">共通クラス</param>
         /// <param name="_active">有効フラグ</param>
@@ -88,7 +88,7 @@ namespace ActualProductChecker
                            + "IREPOKTNM, "
                            + "OPESTAT "
                            + "FROM "
-                           + _cmn.DbCd.Schema + "." + Common.TABLE_NAME_A70 + " "
+                           + _cmn.DbCd.Schema + "." + Common.TABLE_NAME_KM1060 + " "
                            + "WHERE "
                            + "ACTIVE = '" + _active + "' AND "
                            + "OPESTAT = '" + _opeStat + "'";
@@ -98,8 +98,8 @@ namespace ActualProductChecker
                     using (OracleDataAdapter myDa = new OracleDataAdapter(myCmd))
                     {
                         // 結果取得
-                        myDa.Fill(_dataSet, Common.TABLE_NAME_A70);
-                        if (_dataSet.Tables[Common.TABLE_NAME_A70].Rows.Count == 0) // 該当データなし
+                        myDa.Fill(_dataSet, Common.TABLE_NAME_KM1060);
+                        if (_dataSet.Tables[Common.TABLE_NAME_KM1060].Rows.Count == 0) // 該当データなし
                         {
                             Console.WriteLine("i-Reporter 対象工程がデータベースに登録されていません．");
                             return false;
